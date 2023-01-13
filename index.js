@@ -11,10 +11,6 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.use("/", (req, res) => {
-    res.send({"msg": "Home Page"});
-});
-
 app.use("/users", userRouter);
 
 app.use(auth);
