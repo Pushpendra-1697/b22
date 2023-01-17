@@ -2,7 +2,6 @@ const { Router } = require('express');
 const { NoteModel } = require('../Models/Note.model');
 const NoteRouter = Router();
 
-
 NoteRouter.get('/', async (req, res) => {
     let query = req.query;
     try {
@@ -13,7 +12,6 @@ NoteRouter.get('/', async (req, res) => {
         res.send({ "msg": "Something went wrong" })
     }
 });
-
 NoteRouter.post('/create', async (req, res) => {
     const data = req.body;
     try {
@@ -25,9 +23,7 @@ NoteRouter.post('/create', async (req, res) => {
         res.send({ "msg": "Something went wrong" })
     }
 });
-
 //same author should can update/delete own note; 
-
 NoteRouter.patch('/update/:id', async (req, res) => {
     const { id } = req.params;
     const payload = req.body;

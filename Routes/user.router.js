@@ -5,7 +5,6 @@ const { UserModel } = require('../Models/user.model');
 const bcrypt = require('bcrypt');
 require('dotenv').config();
 
-
 userRouter.get('/', async (req, res) => {
     try {
         let users = await UserModel.find();
@@ -15,7 +14,6 @@ userRouter.get('/', async (req, res) => {
         res.send({ "Error": err.message });
     }
 });
-
 userRouter.post('/register', async (req, res) => {
     const { email, pass, name, age } = req.body;
     try {
